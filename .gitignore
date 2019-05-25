@@ -37,7 +37,8 @@ node_modules/
 jspm_packages/
 platforms/
 plugins/
-package-lock.json
+package-lock.json/
+www/
 
 # TypeScript v1 declaration files
 typings/
