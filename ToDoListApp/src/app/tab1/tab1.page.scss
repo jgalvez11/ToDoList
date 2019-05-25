@@ -1,0 +1,34 @@
+.welcome-card ion-img {
+    max-height: 35vh;
+    overflow: hidden;
+}
+
+.listaUsuarios {
+    font-weight: bolder;
+    font-size: 30px;
+    color: rgb(82, 82, 180);
+}
+
+.nombreUsuario {
+    font-weight: bolder;
+    color: rgb(185, 118, 118);
+}
+
+#iconoEliminar,
+#iconoEditar {
+    font-size: 20px;
+}
+
+ion-item-option {
+    text-transform: capitalize;
+}
+
+.container {
+    text-align: center;
+    margin: 10px;
+    ion-icon {
+        margin-top: 30%;
+        font-size: 200px;
+        color: grey;
+    }
+}

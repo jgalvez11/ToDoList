@@ -1,0 +1,53 @@
+<ion-header class="headerFixed">
+    <ion-toolbar color="tertiary">
+        <ion-buttons slot="primary">
+            <ion-button (click)="cerrarModal()" color="danger">
+                <ion-icon slot="icon-only" name="close-circle-outline"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+        <ion-title>Detalle Usuario</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-card>
+        <ion-card-header>
+            <ion-card-subtitle>{{ usuario?.fechaNacimiento | date }}</ion-card-subtitle>
+            <ion-card-title>{{ usuario?.primerNombre }} {{ usuario?.segundoNombre }} {{ usuario?.primerApellido }} {{ usuario?.segundoApellido }}</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+            <div>
+                <ion-label>Tipo Identificación:</ion-label>
+                <ion-label>{{ usuario?.usuarioPK.tipoDocumento }}</ion-label>
+            </div>
+            <div>
+                <ion-label>Número Identificación:</ion-label>
+                <ion-label>{{ usuario?.usuarioPK.numeroDocumento }}</ion-label>
+            </div>
+            <div>
+                <ion-label>Género:</ion-label>
+                <ion-label>{{ usuario?.genero }}</ion-label>
+            </div>
+            <div>
+                <ion-label>Estado Cívil:</ion-label>
+                <ion-label>{{ usuario?.estadoCivil }}</ion-label>
+            </div>
+            <div>
+                <ion-label>Telefono Celular:</ion-label>
+                <ion-label>{{ usuario?.telefonoCelular }}</ion-label>
+            </div>
+            <div>
+                <ion-label>Ciudad:</ion-label>
+                <ion-label>{{ usuario?.ciudadResidencia }}</ion-label>
+            </div>
+        </ion-card-content>
+        <div padding style="text-align: center;">
+            <ion-button size="small" color="primary" (click)="editar()">
+                <ion-icon slot="icon-only" name="create"></ion-icon>
+                Editar</ion-button>
+            <ion-button size="small" color="danger" (click)="eliminar()">
+                <ion-icon slot="icon-only" name="trash"></ion-icon>
+                Eliminar</ion-button>
+        </div>
+    </ion-card>
+</ion-content>

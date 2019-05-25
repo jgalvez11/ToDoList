@@ -1,0 +1,14 @@
+<ion-header class="headerFixed">
+    <ion-toolbar color="tertiary">
+        <ion-buttons slot="primary">
+            <ion-button (click)="cerrarModal()" color="danger">
+                <ion-icon slot="icon-only" name="close-circle-outline"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+        <ion-title>Editar Usuario</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="container">
+    <app-formulario-nuevo-usuario [usuario]="usuario"></app-formulario-nuevo-usuario>
+</ion-content>

@@ -1,0 +1,53 @@
+<ion-header>
+    <ion-toolbar color="tertiary">
+        <ion-title>
+            Lista de Usuarios
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-list *ngIf="users.length > 0">
+        <ion-list-header>
+            <ion-label class="listaUsuarios">Lista de usuarios</ion-label>
+        </ion-list-header>
+        <ion-item-sliding *ngFor="let user of users; let i = index;">
+            <ion-item>
+                <ion-avatar slot="start">
+                    <ion-icon color="secondary" *ngIf="user.genero === 'F'" name="woman" style="font-size: 45px;"></ion-icon>
+                    <ion-icon color="tertiary" *ngIf="user.genero === 'M'" name="man" style="font-size: 45px;"></ion-icon>
+                    <ion-icon color="danger" *ngIf="user.genero === 'O'" name="help" style="font-size: 45px;"></ion-icon>
+                </ion-avatar>
+                <div (click)="verDetalleUsario(user)">
+                    <ion-label class="nombreUsuario">{{ user?.primerNombre | titlecase }} {{ user?.segundoNombre | titlecase }} {{ user?.primerApellido | titlecase }} {{ user?.segundoApellido | titlecase }}</ion-label>
+                    <ion-label><small>{{ user.fechaNacimiento | date }}</small></ion-label>
+                </div>
+            </ion-item>
+            <ion-item-options side="end">
+                <ion-item-option (click)="presentAlertConfirm(user)" color="danger">
+                    <ion-icon id="iconoEliminar" name="trash"></ion-icon>
+                    Eliminar
+                </ion-item-option>
+            </ion-item-options>
+            <ion-item-options side="start">
+                <ion-item-option (click)="update(user)">
+                    <ion-icon id="iconoEditar" name="create"></ion-icon>
+                    Editar
+                </ion-item-option>
+            </ion-item-options>
+        </ion-item-sliding>
+
+    </ion-list>
+
+    <div class="container" *ngIf="users.length == 0">
+        <div>
+            Ups!
+        </div>
+        <div>
+            <ion-icon name="person-add"></ion-icon>
+        </div>
+        <div>
+            <ion-label>No se encontraron usuarios, crea uno</ion-label>
+        </div>
+    </div>
+</ion-content>
